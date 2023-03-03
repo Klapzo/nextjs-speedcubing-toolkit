@@ -1,0 +1,24 @@
+.cubeCanvas {
+	opacity: 1;
+	grid-area:  2 / 1;
+	scale: 1.5;
+	z-index: 1;
+
+}
+
+
+.cubeBackground  {
+	opacity: 1;
+    position: absolute;
+    left: 12%;
+    top: 23%;
+	z-index: 0;
+	width: 400px;
+	height: 400px;
+	scale: 1.1;
+
+	filter: blur(30px);
+	border-radius: 1000vh;
+	background: radial-gradient(rgb(17, 17, 17), #5a4f4f4f);
+}
+

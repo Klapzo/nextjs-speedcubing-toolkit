@@ -1,0 +1,21 @@
+.createAccountLink {
+    font-family: monospace;
+    font-size: .8em;
+    letter-spacing: 0;
+}
+
+.mainButton {
+    font:inherit;
+    font-size: 3rem;
+    width: 7em;
+    color:rgb(15, 15, 15);
+    background: linear-gradient(to left,#f9293e,#ffd08b);
+    border: none;
+    cursor: pointer;
+    border-radius: 100vw;
+}
+
+.buttonswrapper {
+  display: flex;
+  align-items: flex-end
+}

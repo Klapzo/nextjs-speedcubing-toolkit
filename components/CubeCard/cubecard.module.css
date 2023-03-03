@@ -1,0 +1,85 @@
+.frostedContainer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	aspect-ratio: 1/1.5;
+
+	font-family: 'Space Mono', monospace;
+	letter-spacing: 0;
+	color: #e4e4e4;
+	background: linear-gradient(
+		135deg,
+		rgba(0, 0, 0, 0.406),
+		rgba(52, 51, 51, 0.071)
+	);
+	box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+
+	border-radius: 15px;
+	border: 1px solid rgba(86, 84, 84, 0.998);
+	transition: all 250ms ease-out;
+	cursor: pointer;
+}
+
+.cubeMethods {
+	opacity:0.05;
+	scale: .7;
+	transition: opacity 100ms ease-out, scale 250ms ease-out;
+	text-align: center;	
+	color: inherit;
+	word-spacing: 2.5em;
+	padding-inline: 1.5em;
+}
+
+.frostedContainer:hover {
+	border: 3px solid rgb(255, 255, 255);
+	scale: 1.05;
+}
+
+.frostedContainer:hover > .cubeMethods{
+	opacity:1;
+	scale: 1;
+}
+
+
+.title {
+	font-family: inherit;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0;
+	margin: 0;
+	font-size: 1.5em;
+	color: inherit;
+}
+
+.image {
+	margin: 10%;
+}
+
+.frostedContainerDisabled {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	aspect-ratio: 1/1.5;
+
+	font-family: 'Space Mono', monospace;
+
+
+
+	border-radius: 15px;
+	border: 1px solid rgba(86, 84, 84, 0.998);
+	cursor: default;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.406),
+		rgba(255, 255, 255, 0.071)
+	);
+	filter: grayscale() blur(.8px);
+	
+}
+

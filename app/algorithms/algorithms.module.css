@@ -1,0 +1,15 @@
+.algorithms {
+    display: grid;
+    width: 100%;
+    overflow-y: scroll;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 320px));
+    grid-template-rows: repeat(auto-fill, minmax(500px, 75%));
+    justify-content: center;
+    gap: 7%;
+    padding:  3%;
+    margin-bottom: 3em;
+}
+
+.page > a {
+    text-decoration: none;
+}

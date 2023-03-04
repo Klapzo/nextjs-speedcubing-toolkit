@@ -1,0 +1,21 @@
+
+
+.container {
+  grid-area:   2/  2;
+  min-width: 25em;
+
+  
+}
+
+.form {
+ display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(25deg ,#30060b,#492f08);
+  border-radius: 25px;
+	box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+  padding:10%;
+
+  /* border: 5px purple solid; */
+}

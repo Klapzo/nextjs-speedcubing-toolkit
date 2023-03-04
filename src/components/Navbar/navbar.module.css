@@ -6,6 +6,8 @@
 	align-items: center;
 	box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.582);
 	border-radius: 0 0 2px 2px;
+    transition: transform 500ms ease;
+
 }
 
 .list {
@@ -26,7 +28,6 @@
     margin-inline: 0px;
     padding-inline: 3rem;
     text-decoration: none;
-    transition: all 250ms ease;
     
     cursor: pointer;
 
@@ -51,4 +52,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+#hidden {
+    transform: translateY(-100%);
+    display: hidden;
 }

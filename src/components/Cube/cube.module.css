@@ -1,8 +1,12 @@
+
+
 .cubeCanvas {
 	opacity: 1;
 	grid-area:  2 / 1;
 	scale: 1.5;
 	z-index: 1;
+	scale:0;
+	transition: scale 2s;
 
 }
 
@@ -22,3 +26,6 @@
 	background: radial-gradient(rgb(17, 17, 17), #5a4f4f4f);
 }
 
+.loaded {
+	scale:1
+}

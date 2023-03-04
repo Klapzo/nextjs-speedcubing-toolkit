@@ -5,7 +5,9 @@ import styles from './navbar.module.css'
 
 function UserIcon (props) {
   return (
-    <Link to='profile' className={styles.navItem} id='profile' href='/profile'>
+    <Link
+      to='profile' className={styles.navItem} id='profile' href='/signup'
+    >
       <FaUser />
     </Link>
   )

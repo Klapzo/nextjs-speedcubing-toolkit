@@ -17,7 +17,8 @@
     border-radius: 100vw;
 }
 
-.wrapper {
+.container {
+    display: grid;
     grid-area: 2/2;
     font-family: inherit;
     font-weight: bold;

@@ -5,7 +5,6 @@ import { useState } from 'react'
 
 export default function Cube () {
   const [loaded, setLoaded] = useState(false)
-  console.log(loaded)
   return (
     <>
 

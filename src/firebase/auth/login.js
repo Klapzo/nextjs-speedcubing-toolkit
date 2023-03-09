@@ -16,5 +16,5 @@ export default async function logIn (email, password) {
 }
 
 onAuthStateChanged(auth, async user => {
-  console.log(user)
+  // console.log(user)
 })

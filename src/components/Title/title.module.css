@@ -1,33 +1,25 @@
 .title {
-    color:white;
-    font-size: 7rem;
-    text-align: start;
-    margin: 0;
+    display:flex;
+    width: min-content;
+    height: min-content;
     padding: 0;
-    user-select: none;
-}
-.mainButton {
-    font:inherit;
-    font-size: 3rem;
-    width: 7em;
-    color:rgb(15, 15, 15);
-    background: linear-gradient(to left,#f9293e,#ffd08b);
-    border: none;
-    cursor: pointer;
-    border-radius: 100vw;
-}
+    
+    color:white;
 
-.container {
-    display: grid;
-    grid-area: 2/2;
+    align-self: center;
+
+    font-size: 6rem;
+    word-spacing: 4em;
     font-family: inherit;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
+    
+    user-select: none;
 }
 
-.createAccountLink {
-    font-family: monospace;
-    place-self: center;
-    margin:2em
+.buttonExpanded {
+    transition: all 1s ease;
+    filter: blur(5px);
+    scale: 0.5;
+    opacity: 0;
 }

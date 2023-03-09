@@ -1,12 +1,28 @@
 'use client'
-import React from 'react'
+import MainButton from '@/components/MainButton/MainButton'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
 import Title from '../../components/Title/Title'
+import styles from './home.module.css'
 
 function Home () {
+  const [expanded, setExpanded] = useState(false)
+  const router = useRouter()
+
+  const handleClick = () => {
+    if (expanded) return
+    setExpanded(prev => !prev)
+    setTimeout(() => {
+      router.push('/signup')
+    }, 500)
+  }
   return (
-
-    <Title />
-
+    <>
+      <div className={styles.container}>
+        <Title buttonExpanded={expanded} />
+        <MainButton handleClick={handleClick} expanded={expanded} />
+      </div>
+    </>
   )
 }
 

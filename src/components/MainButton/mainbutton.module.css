@@ -1,22 +1,33 @@
-.createAccountLink {
-    font-family: monospace;
-    font-size: .8em;
-    letter-spacing: 0;
-}
-
 .mainButton {
-    font:inherit;
-    font-size: 3rem;
-    width: 7em;
-    color:rgb(15, 15, 15);
-    background: linear-gradient(to left,#f9293e,#ffd08b);
-    border: none;
-    cursor: pointer;
-    border-radius: 100vw;
-    z-index: 2;
+  font:inherit;
+  font-size: 2.5rem;
+  width: 6em;
+  height: 80px;
+  color:rgb(15, 15, 15);
+  background: linear-gradient(to left,#f9293e,#ffd08b);
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: all 1s ease;
+
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.buttonswrapper {
-  display: flex;
-  align-items: flex-end
+.expanded{
+  transform: translateY(-50%);
+  height: 580px;
+  width: 350px;
+  transition: all .5s ease;
+  color: #00000000;
+  background: linear-gradient(25deg ,#30060b,#492f08);
+	box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+  cursor: default;
 }
+

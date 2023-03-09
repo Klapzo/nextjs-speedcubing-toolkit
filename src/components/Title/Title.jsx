@@ -1,13 +1,9 @@
-import MainButton from '../MainButton/MainButton'
 import styles from './title.module.css'
-function Title () {
+function Title ({ buttonExpanded }) {
   return (
     <>
-      <div className={styles.container}>
-        <h1 className={styles.title}>SPEEDCUBING TOOLKIT</h1>
-        <MainButton />
+      <h1 className={styles.title + ' ' + (buttonExpanded && styles.buttonExpanded)}>SPEEDCUBING TOOLKIT</h1>
 
-      </div>
     </>
 
   )

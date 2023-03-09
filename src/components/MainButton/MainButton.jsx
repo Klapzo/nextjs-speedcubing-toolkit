@@ -1,13 +1,18 @@
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion'
 import styles from './mainbutton.module.css'
-function MainButtons () {
+
+function MainButton ({ handleClick, expanded }) {
   return (
-    <Link href='/signup'>
-      <button className={styles.mainButton}>GET STARTED</button>
-    </Link>
+
+    <div className={styles.container}>
+      <Link href='#'>
+        <motion.button className={styles.mainButton + ' ' + (expanded && styles.expanded)} onClick={handleClick}>get started</motion.button>
+      </Link>
+    </div>
 
   )
 }
 
-export default MainButtons
+export default MainButton

@@ -6,6 +6,7 @@ import styles from './signup.module.css'
 import { Quicksand } from 'next/font/google'
 import { FcGoogle } from 'react-icons/fc'
 import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 import {
   Button,
@@ -54,54 +55,59 @@ function SignUp () {
   }
 
   return (
+
     <div className={styles.container + ' ' + formFont.className}>
 
       <form onSubmit={handleLogIn} className={styles.form}>
-        <h2> REGISTER </h2>
+        <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className={styles.wrapper}>
+          <h2> REGISTER </h2>
 
-        <FormControl>
+          <FormControl>
 
-          <FormLabel>Handle</FormLabel>
-          <InputGroup size='sm'>
-            <InputLeftAddon color='gray.900'>@</InputLeftAddon>
-            <Input required type='email' value={email} onChange={handleEmailChange} />
-          </InputGroup>
+            <FormLabel>Handle</FormLabel>
+            <InputGroup size='sm'>
+              <InputLeftAddon color='gray.900'>@</InputLeftAddon>
+              <Input required type='email' value={email} onChange={handleEmailChange} />
+            </InputGroup>
 
-        </FormControl>
+          </FormControl>
 
-        <FormControl>
-          <FormLabel>Email</FormLabel>
+          <FormControl>
+            <FormLabel>Email</FormLabel>
 
-          <InputGroup size='lg'>
-            <Input required type='email' placeholder='Enter email' value={email} onChange={handleEmailChange} />
-          </InputGroup>
+            <InputGroup size='lg'>
+              <Input required type='email' placeholder='Enter email' value={email} onChange={handleEmailChange} />
+            </InputGroup>
 
-        </FormControl>
+          </FormControl>
 
-        <FormControl>
+          <FormControl>
 
-          <InputGroup size='lg'>
-            <Input
-              type={show ? 'text' : 'password'}
-              placeholder='password'
-              required
-              value={password}
-              onChange={handlePasswordChange}
-            />
-            <InputRightElement width='4.5rem'>
-              <Button h='1.75rem' colorScheme='blackAlpha' size='sm' onClick={handleShowClick}>
-                {show ? 'Hide' : 'Show'}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
+            <InputGroup size='lg'>
+              <Input
+                type={show ? 'text' : 'password'}
+                placeholder='password'
+                required
+                value={password}
+                onChange={handlePasswordChange}
+              />
+              <InputRightElement width='4.5rem'>
+                <Button h='1.75rem' colorScheme='blackAlpha' size='sm' onClick={handleShowClick}>
+                  {show ? 'Hide' : 'Show'}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
 
-        </FormControl>
+          </FormControl>
 
-        <Button variant='outline' colorScheme='white' type='submit'>Sign In</Button>
+          <section className={styles.formSubmit}>
+            <Button variant='outline' colorScheme='white' type='submit'>Sign In</Button>
 
-        <p> OR </p>
+            <p> OR </p>
 
-        <Button leftIcon={<FcGoogle />} onClick={handleGoogleSignUp} colorScheme='blackAlpha'>sign in with google</Button>
+            <Button leftIcon={<FcGoogle />} onClick={handleGoogleSignUp} colorScheme='blackAlpha'>sign in with google</Button>
+          </section>
+        </motion.div>
       </form>
     </div>
 

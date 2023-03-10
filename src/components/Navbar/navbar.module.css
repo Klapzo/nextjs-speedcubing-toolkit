@@ -1,26 +1,31 @@
 .navbar {
-    background-color: #101010;
-	height: 50px;
-	width: 100%;
 	display: flex;
-	align-items: center;
+
+    height: 60px;
+	width: 100%;
+
+    background-color: #101010;
 	box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.582);
 	border-radius: 0 0 2px 2px;
-    transition: transform 500ms ease;
 
 }
 
 .list {
-	width: 100%;
+	display: flex;
+    align-items: center;
+	justify-content: flex-end;
+	
+    width: 100%;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	justify-content: flex-end;
-	list-style: none;
+	
+    list-style: none;
+
 }
 
 
 .navItem {
+    align-self: center;
     color: white;
     border: none;
     font-size: 1.5em;
@@ -33,27 +38,3 @@
 
 }
 
-
-#timer.active {
-	background: linear-gradient(to left ,#f85858, #ffaf4d);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-#learn.active {
-    background: linear-gradient(to left ,#3e5eea, #68ed71);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-#practice.active {
-    background: linear-gradient(to left ,#fde55b, #edeeef);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-#hidden {
-    transform: translateY(-100%);
-    display: hidden;
-}

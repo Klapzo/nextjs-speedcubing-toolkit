@@ -4,14 +4,6 @@ import './globals.css'
 import { Staatliches } from 'next/font/google'
 import { ChakraProvider } from '@chakra-ui/react'
 import { CacheProvider } from '@chakra-ui/next-js'
-// import { AppContext } from '@/context/AppContext'
-// import {
-//   onAuthStateChanged,
-//   getAuth
-// } from 'firebase/auth'
-// import firebaseApp from '@/firebase/config'
-
-// const auth = getAuth(firebaseApp)
 
 export const metadata = {
   title: 'SPEEDCUBING TOOLKIT',
@@ -20,21 +12,8 @@ export const metadata = {
 const font = Staatliches({ subsets: ['latin'], weight: '400' })
 
 export default function RootLayout ({ children }) {
-  // const [user, setUser] = useState(null)
-
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser(user)
-  //     } else {
-  //       setUser(null)
-  //     }
-  //   })
-
-  //   return () => unsubscribe()
-  // }, [])
-
   return (
+
     <html lang='en'>
       <body className={font.className}>
         <CacheProvider>

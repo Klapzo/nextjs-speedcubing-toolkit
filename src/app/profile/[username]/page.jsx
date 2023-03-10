@@ -1,19 +1,16 @@
 'use client'
-import { AuthContext } from '@/context/AuthContext'
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from './profilepage.module.css'
-import firebaseApp from '@/firebase/config'
-import { getAuth } from 'firebase/auth'
-const auth = getAuth(firebaseApp)
-const currentUser = auth.currentUser
+
+import useUser from '@/app/hooks/useUser'
 
 function ProfilePage ({ params }) {
-  const user = useContext(AuthContext)
+  const user = useUser()
   return (
     <div className={styles.container}>
       <h1>{user?.displayName}</h1>
       <img alt='' src={user?.photoURL} />
-      <button onClick={() => { console.log(currentUser) }}>asdkjas</button>
+      <button onClick={() => { console.log(user) }}>asdkjas</button>
     </div>
   )
 }

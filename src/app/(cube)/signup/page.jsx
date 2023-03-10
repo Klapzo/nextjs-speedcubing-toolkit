@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
-import styles from './signup.module.css'
+import styles from './form.module.css'
 import { Quicksand } from 'next/font/google'
-import Form from './form/Form'
+import Form from './forms/Form'
 
 export const QuicksandFont = Quicksand({ subsets: ['latin'], weight: '400' })
 
-function SignUp () {
+function Forms () {
   return (
 
     <div className={styles.container + ' ' + QuicksandFont.className}>
@@ -18,4 +18,4 @@ function SignUp () {
   )
 }
 
-export default SignUp
+export default Forms

@@ -2,8 +2,8 @@
 import Navbar from '../components/Navbar/Navbar'
 import './globals.css'
 import { Staatliches } from 'next/font/google'
-import { ChakraProvider } from '@chakra-ui/react'
-import { CacheProvider } from '@chakra-ui/next-js'
+import { MantineProvider } from '@mantine/core'
+import { AuthProvider } from '@/context/AuthContext'
 
 export const metadata = {
   title: 'SPEEDCUBING TOOLKIT',
@@ -11,19 +11,56 @@ export const metadata = {
 }
 const font = Staatliches({ subsets: ['latin'], weight: '400' })
 
+const appTheme = {
+  colorScheme: 'dark',
+  colors: {
+    brand: ['#F0BBDD', '#ED9BCF', '#EC7CC3', '#ED5DB8', '#F13EAF', '#F71FA7', '#FF00A1', '#E00890', '#C50E82', '#AD1374']
+  },
+  primaryColor: 'brand'
+// },
+//   palette: {
+//     mode: 'dark',
+//     primary: {
+//       main: '#624F82',
+//       contrastText: '#E9E8E8',
+//       light: '#9F73AB',
+//       dark: '#3F3B6C'
+//     },
+//     secondary: {
+//       main: '#F3CD97',
+//       dark: '#E98B50',
+//       light: '#FEF2A0'
+//     },
+//     background: {
+//       default: '#2D2D2D',
+//       paper: '#313131'
+//     },
+//     text: {
+//       secondary: '#eaeaea',
+//       disabled: 'rgba(223,211,195,0.81)',
+//       primary: '#ede7f6'
+//     },
+//     action: {
+//       active: '#ff00ff',
+//       selected: '#ff0000'
+//     }
+//   }
+}
+
 export default function RootLayout ({ children }) {
   return (
-
     <html lang='en'>
       <body className={font.className}>
-        <CacheProvider>
-          <ChakraProvider>
+        <AuthProvider>
+          <MantineProvider theme={appTheme}>
+
             <Navbar />
             <main style={{ display: 'flex', width: '100%', height: '100%' }}>
               {children}
             </main>
-          </ChakraProvider>
-        </CacheProvider>
+
+          </MantineProvider>
+        </AuthProvider>
 
       </body>
     </html>

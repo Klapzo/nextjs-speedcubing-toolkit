@@ -1,13 +1,15 @@
-body, #root {
-height: 100vh;
-width: 100vw;
-padding: 0;
-margin: 0;
-    overflow: hidden;
+html,body, #root {
+	color-scheme: dark;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
 
 	background-color: #101010;
 	color: white;
 	letter-spacing: 0.25em;
-	color-scheme: dark;
 
 }

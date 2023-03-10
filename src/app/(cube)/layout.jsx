@@ -4,10 +4,12 @@ import styles from './home.module.css'
 
 function CubeLayout ({ children }) {
   return (
+
     <div className={styles.layout}>
       <Cube />
       {children}
     </div>
+
   )
 }
 

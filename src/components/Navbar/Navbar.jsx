@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 import styles from './navbar.module.css'
-import Logo from '../Logo/Logo'
+import Logo from './Logo/Logo'
 import NavItem from './NavItem'
-import UserIcon from './UserIcon'
+import LogIn from './LogIn/LogIn'
 
 const links = [
 
@@ -38,7 +39,7 @@ function Navbar () {
               </NavItem>
             )
           })}
-          <UserIcon />
+          <LogIn />
         </ul>
       </nav>
     </header>

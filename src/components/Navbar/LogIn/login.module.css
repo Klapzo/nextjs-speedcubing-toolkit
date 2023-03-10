@@ -1,0 +1,35 @@
+.container, .imageContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-inline: 1em 1em;
+  
+  border: 2px solid rgb(225, 218, 218);
+  border-radius: 50em;
+}
+
+
+.container {
+  width: 130px;
+  padding: .5em;
+  
+  word-spacing: 5px;
+  transition: background-color 100ms ease;
+}
+
+
+
+.container:hover {
+  background-color: #2e2e2eba;
+}
+
+.userImage {
+  max-width: 40px;
+  aspect-ratio: 1/1;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  border-radius: 50%;
+}
+

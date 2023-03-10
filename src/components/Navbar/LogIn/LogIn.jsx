@@ -1,13 +1,14 @@
-import React from 'react'
+import { AuthContext } from '@/context/AuthContext'
+import React, { useContext } from 'react'
 import LogInButton from './LogInButton'
 import UserIcon from './userIcon'
-import useUser from '@/app/hooks/useUser'
 
 function LogIn () {
-  const user = useUser()
+  const { currentUser } = useContext(AuthContext)
+
   return (
     <>
-      {user ? <UserIcon imageURL={user.photoURL} /> : <LogInButton />}
+      {currentUser ? <UserIcon imageURL={currentUser.photoURL} /> : <LogInButton />}
     </>
   )
 }

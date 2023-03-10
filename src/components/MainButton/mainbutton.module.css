@@ -1,6 +1,8 @@
 .mainButton {
   font:inherit;
   font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
   width: 6em;
   height: 80px;
   color:rgb(15, 15, 15);
@@ -21,7 +23,7 @@
 }
 
 .expanded{
-  transform: translateY(-50%);
+  transform: translateY(-45%);
   height: 580px;
   width: 350px;
   transition: all .5s ease;

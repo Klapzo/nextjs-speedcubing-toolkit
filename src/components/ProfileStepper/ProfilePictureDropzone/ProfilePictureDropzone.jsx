@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProfilePictureDropzone() {
+function ProfilePictureDropzone () {
   return (
     <div>ProfilePictureDropzone</div>
   )

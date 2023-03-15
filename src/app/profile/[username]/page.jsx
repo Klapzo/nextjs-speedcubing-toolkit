@@ -1,11 +1,10 @@
 'use client'
-import React from 'react'
+import { AuthContext } from '@/context/AuthContext'
+import React, { useContext } from 'react'
 import styles from './profilepage.module.css'
 
-import useUser from '@/app/hooks/useUser'
-
 function ProfilePage ({ params }) {
-  const user = useUser()
+  const user = useContext(AuthContext)
   return (
     <div className={styles.container}>
       <h1>{user?.displayName}</h1>

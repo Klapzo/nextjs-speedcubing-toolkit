@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { AuthContext } from '@/context/AuthContext'
 
 function ButtonGroup () {
-  const { isLogin, setIsLogin, setError, clearForm } = useContext(FormContext)
+  const { isLogin, setIsLogin, setError } = useContext(FormContext)
   const router = useRouter()
   const { signUpwithGoogle } = useContext(AuthContext)
 

@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { FormContext } from '@/context/FormContext'
 import { TextInput } from '@mantine/core'
 import styles from './formcomponents.module.css'
 
 function EmailInput () {
   const { email, setEmail } = useContext(FormContext)
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
 
   const handleEmailChange = (e) => {
     const email = e.target.value
@@ -19,7 +19,7 @@ function EmailInput () {
       className={styles.Input}
       placeholder='Email'
       label='Email'
-      error={error && error}
+      // error={error && error}
       radius='xl'
       onChange={handleEmailChange}
       value={email}

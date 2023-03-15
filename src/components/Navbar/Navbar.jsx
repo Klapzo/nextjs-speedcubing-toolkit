@@ -1,15 +1,17 @@
 'use client'
 import React from 'react'
 import styles from './navbar.module.css'
-import Logo from './Logo/Logo'
-import NavItem from './NavItem'
-import LogIn from './LogIn/LogIn'
+import Logo from './components/Logo/Logo'
+import NavItem from './components/NavItem/NavItem'
+import LogInButton from './components/LogIn/LogInButton/LogInButton'
+import UserIcon from './components/LogIn/UserIcon/UserIcon'
+import { useUser } from '@/context/AuthContext'
 
 const links = [
 
   {
-    label: 'algorithms',
-    route: '/algorithms'
+    label: 'algs',
+    route: '/algs'
   },
   {
     label: 'practice',
@@ -26,6 +28,8 @@ const links = [
 ]
 
 function Navbar () {
+  const { currentUser } = useUser()
+
   return (
     <header>
       <nav className={styles.navbar}>
@@ -39,7 +43,7 @@ function Navbar () {
               </NavItem>
             )
           })}
-          <LogIn />
+          {currentUser ? <UserIcon imageURL={currentUser.photoURL} /> : <LogInButton />}
         </ul>
       </nav>
     </header>

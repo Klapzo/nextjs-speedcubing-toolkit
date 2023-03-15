@@ -19,7 +19,7 @@ function ButtonGroup () {
       return setError(error)
     }
 
-    return router.push('/profile')
+    return router.push('/profile/complete')
   }
 
   return (

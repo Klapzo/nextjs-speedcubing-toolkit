@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
 
 import { Stepper, Button } from '@mantine/core'
-import UsernameInput from './UsernameInput/UsernameInput'
-import MainEventsMultiselect from './MainEventsMultiselect/MainEventsMultiselect'
-import ProfilePictureDropzone from './ProfilePictureDropzone/ProfilePictureDropzone'
+import UsernameInput from './components/UsernameInput/UsernameInput'
+import MainEventsMultiselect from './components/MainEventsMultiselect/MainEventsMultiselect'
+import ProfilePictureDropzone from './components/ProfilePictureDropzone/ProfilePictureDropzone'
 import { useRouter } from 'next/navigation'
-function ProfileStepper ({ children }) {
+
+function ProfileStepper () {
   const [active, setActive] = useState(0)
   const router = useRouter()
-  const redirect = () => router.push('/profile/klapzo')
-  const nextStep = () => setActive((current) => (current < 2 ? current + 1 : redirect()))
+  const nextStep = () => setActive((current) => (current + 1))
+
+  if (active === 3) {
+    router.push('/profile/user/me')
+  }
 
   return (
     <>
-      <Stepper active={active} onStepClick={setActive} allowNextStepsSelect={false} breakpoint='sm' style={{ width: '100%' }}>
+      <Stepper active={active} allowNextStepsSelect={false} breakpoint='sm' style={{ width: '100%' }}>
         <Stepper.Step label='Set username'>
           <UsernameInput />
         </Stepper.Step>
@@ -27,7 +31,7 @@ function ProfileStepper ({ children }) {
 
       </Stepper>
 
-      <Button onClick={nextStep}>Next step</Button>
+      <Button onClick={nextStep}>{active >= 2 ? <p>Go to profile</p> : <p>Next step</p>}</Button>
     </>
   )
 }

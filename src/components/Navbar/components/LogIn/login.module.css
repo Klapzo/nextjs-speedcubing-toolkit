@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin-inline: 1em 1em;
+  margin-inline: 0 1em;
   text-decoration: none;
   color: white;
   
@@ -13,10 +13,10 @@
 
 
 .container {
-  width: 130px;
-  padding: .5em;
+  width: 110px;
+  padding-block: .5em;
   
-  word-spacing: 5px;
+  word-spacing: 2px;
   transition: background-color 100ms ease;
 }
 

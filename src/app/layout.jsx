@@ -52,8 +52,8 @@ const appTheme = {
 export default function RootLayout ({ children }) {
   return (
     <html lang='en'>
-      <Suspense fallback={<LoadingScreen />}>
-        <body className={font.className}>
+      <body className={font.className}>
+        <Suspense fallback={<LoadingScreen />}>
           <AuthProvider>
             <MantineProvider theme={appTheme}>
 
@@ -68,8 +68,8 @@ export default function RootLayout ({ children }) {
             </MantineProvider>
           </AuthProvider>
 
-        </body>
-      </Suspense>
+        </Suspense>
+      </body>
     </html>
   )
 }

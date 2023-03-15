@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextInput } from '@mantine/core'
 import { FiAtSign } from 'react-icons/fi'
-import { AuthContext } from '@/context/AuthContext'
+import { useUser } from '@/context/AuthContext'
 
 function UsernameInput () {
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser } = useUser()
   const [username, setUsername] = useState('')
-
+  console.log(currentUser)
   useEffect(() => {
-    setUsername(currentUser.displayName)
+    setUsername(currentUser?.displayName)
   }, [currentUser])
 
   return (

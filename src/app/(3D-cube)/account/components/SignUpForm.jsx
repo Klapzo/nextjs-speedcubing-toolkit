@@ -28,7 +28,7 @@ function SignUpForm () {
       return errorState[1](error)
     }
 
-    return router.push('/profile')
+    return router.push('/profile/complete')
   }
 
   return (

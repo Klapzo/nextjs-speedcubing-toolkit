@@ -7,11 +7,14 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  updateProfile
+  updateProfile,
+  signOut
 } from 'firebase/auth'
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 export const AuthContext = createContext()
+
+export const useUser = () => useContext(AuthContext)
 
 export const AuthProvider = ({ children }) => {
   const auth = getAuth(firebaseApp)
@@ -25,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       setPending(false)
     })
     return () => unsuscribe()
-  }, [])
+  }, [auth])
 
   async function logIn (email, password) {
     let result = null
@@ -54,6 +57,7 @@ export const AuthProvider = ({ children }) => {
   async function signUpwithGoogle () {
     let UserCredential = null
     let error = null
+
     try {
       UserCredential = await signInWithPopup(auth, provider)
     } catch (e) {
@@ -88,12 +92,22 @@ export const AuthProvider = ({ children }) => {
     return error
   }
 
+  function logOut () {
+    let error = null
+    try {
+      signOut(auth)
+    } catch (e) {
+      error = e
+    }
+    return error
+  }
+
   if (pending) {
     return
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, logIn, signUpWithEmail, signUpwithGoogle, changeProfilePicture, changeUsername }}>
+    <AuthContext.Provider value={{ currentUser, logIn, signUpWithEmail, signUpwithGoogle, changeProfilePicture, changeUsername, logOut }}>
       {children}
     </AuthContext.Provider>
   )

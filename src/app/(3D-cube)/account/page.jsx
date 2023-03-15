@@ -2,11 +2,11 @@
 import React from 'react'
 import styles from './form.module.css'
 import { Quicksand } from 'next/font/google'
-import Form from './forms/Form'
+import Form from './components/Form'
 
 export const QuicksandFont = Quicksand({ subsets: ['latin'], weight: '400' })
 
-function Forms () {
+function Account () {
   return (
 
     <div className={styles.container + ' ' + QuicksandFont.className}>
@@ -18,4 +18,4 @@ function Forms () {
   )
 }
 
-export default Forms
+export default Account

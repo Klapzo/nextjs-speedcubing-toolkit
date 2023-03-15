@@ -1,10 +1,13 @@
 'use client'
 import React from 'react'
 import styles from './completeprofile.module.css'
-import { QuicksandFont } from '../(cube)/signup/page'
-import ProfileStepper from '@/components/ProfileStepper/ProfileStepper'
+import { QuicksandFont } from '../../(3D-cube)/account/page'
+import ProfileStepper from './ProfileStepper/ProfileStepper'
 
 function CompleteProfile () {
+  // const user = useUser()
+  // const router = useRouter()
+
   return (
     <div className={styles.container + ' ' + QuicksandFont.className}>
       <h2>Complete your profile</h2>

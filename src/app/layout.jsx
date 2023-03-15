@@ -4,6 +4,8 @@ import './globals.css'
 import { Staatliches } from 'next/font/google'
 import { MantineProvider } from '@mantine/core'
 import { AuthProvider } from '@/context/AuthContext'
+import { Suspense } from 'react'
+import LoadingScreen from '@/components/LoadingScreen/LoadingScreen'
 
 export const metadata = {
   title: 'SPEEDCUBING TOOLKIT',
@@ -50,19 +52,24 @@ const appTheme = {
 export default function RootLayout ({ children }) {
   return (
     <html lang='en'>
-      <body className={font.className}>
-        <AuthProvider>
-          <MantineProvider theme={appTheme}>
+      <Suspense fallback={<LoadingScreen />}>
+        <body className={font.className}>
+          <AuthProvider>
+            <MantineProvider theme={appTheme}>
 
-            <Navbar />
-            <main style={{ display: 'flex', width: '100%', height: '100%' }}>
-              {children}
-            </main>
+              <Navbar />
 
-          </MantineProvider>
-        </AuthProvider>
+              <main style={{ display: 'flex', width: '100%', height: '100%' }}>
 
-      </body>
+                {children}
+
+              </main>
+
+            </MantineProvider>
+          </AuthProvider>
+
+        </body>
+      </Suspense>
     </html>
   )
 }

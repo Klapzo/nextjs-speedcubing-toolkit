@@ -9,7 +9,7 @@ import { AuthContext } from '@/context/AuthContext'
 function SignUpForm () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const errorState = useState('')
   const { signUpWithEmail } = useContext(AuthContext)
 
   const router = useRouter()
@@ -25,7 +25,7 @@ function SignUpForm () {
     clearForm()
 
     if (error) {
-      return setError(error)
+      return errorState[1](error)
     }
 
     return router.push('/profile')

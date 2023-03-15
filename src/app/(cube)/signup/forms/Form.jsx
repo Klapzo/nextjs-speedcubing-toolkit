@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { FormContext } from '@/context/FormContext'
 import { motion } from 'framer-motion'
@@ -6,14 +7,13 @@ import ButtonGroup from './components/ButtonGroup'
 import SignUpForm from './SignUpForm'
 import LogInForm from './LogInForm'
 
-function Form ({ children }) {
+function Form () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [isLogin, setIsLogin] = useState(true)
 
   return (
-
     <FormContext.Provider value={{
       email,
       setEmail,

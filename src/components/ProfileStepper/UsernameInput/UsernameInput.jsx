@@ -10,7 +10,7 @@ function UsernameInput () {
   useEffect(() => {
     setUsername(currentUser.displayName)
   }, [currentUser])
-  
+
   return (
     <>
 

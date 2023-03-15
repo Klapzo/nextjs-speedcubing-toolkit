@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './algorithms.module.css'
-import FrostedContainer from '../../components/CubeCard/FrostedContainer'
-import CardTitle from '../../components/CubeCard/CardTitle'
-import CardImage from '../../components/CubeCard/CardImage'
-import CardMethods from '../../components/CubeCard/CardMethods'
+import FrostedContainer from './components/CubeCard/FrostedContainer'
+import CardTitle from './components/CubeCard/CardTitle'
+import CardImage from './components/CubeCard/CardImage'
+import CardMethods from './components/CubeCard/CardMethods'
 
 import { cardsInfo } from '../../utils/cardsInfo'
 

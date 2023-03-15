@@ -1,6 +1,6 @@
-import Cube from '@/components/Cube/Cube'
+import Cube from '@/app/(3D-cube)/components/Cube/Cube'
 import React from 'react'
-import styles from './home.module.css'
+import styles from './home/home.module.css'
 
 function CubeLayout ({ children }) {
   return (

@@ -1,12 +1,12 @@
 import React from 'react'
-import styles from './login.module.css'
+import styles from '../login.module.css'
 import Link from 'next/link'
 import { FaUser } from 'react-icons/fa'
 
 function LogInButton () {
   return (
     <Link
-      href='/signup'
+      href='/account'
       className={styles.container}
     >
       <FaUser />

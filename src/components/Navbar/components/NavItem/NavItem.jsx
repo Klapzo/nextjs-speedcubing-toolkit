@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from './navbar.module.css'
+import styles from '../../navbar.module.css'
 
 function NavItem ({ label, route, children }) {
   return (

@@ -1,18 +1,15 @@
 import firebaseApp from '../config'
-import { getFirestore, doc, getDoc } from 'firebase/firestore'
+import { getFirestore, getDocs, collection } from 'firebase/firestore'
 
 const db = getFirestore(firebaseApp)
-export default async function getDocument (collection, id) {
-  const docRef = doc(db, collection, id)
 
-  let result = null
-  let error = null
+async function getData (colleccion) {
+  const querySnapshot = await getDocs(collection(db, colleccion))
+  return querySnapshot.docs
+}
 
-  try {
-    result = await getDoc(docRef)
-  } catch (e) {
-    error = e
-  }
+export async function getUser () {
+  const response = await getData('users')
 
-  return { result, error }
+  return response
 }

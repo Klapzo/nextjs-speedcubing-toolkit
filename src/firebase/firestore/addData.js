@@ -1,19 +1,28 @@
 import firebaseApp from '../config'
-import { getFirestore, doc, setDoc } from 'firebase/firestore'
+import { getFirestore, addDoc, collection, Timestamp } from 'firebase/firestore'
 
 const db = getFirestore(firebaseApp)
 
-export default async function addData (colllection, id, data) {
-  let result = null
-  let error = null
-
+async function addData (colllection, data) {
   try {
-    result = await setDoc(doc(db, colllection, id), data, {
-      merge: true
-    })
+    const docref = await addDoc(collection(db, colllection), data)
+    console.log(docref)
+    return docref
   } catch (e) {
-    error = e
+    console.log(e)
+    return e
   }
+}
 
-  return { result, error }
+export async function addUser ({ userId, userName, avatar, mainEvents, createdAt }) {
+  const response = await addData('users',
+    {
+      userId,
+      userName,
+      avatar,
+      mainEvents,
+      createdAt: Timestamp.fromDate(new Date(createdAt))
+    })
+
+  return response
 }

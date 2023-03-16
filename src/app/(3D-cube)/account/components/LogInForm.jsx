@@ -1,20 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation'
-
 import EmailInput from './components/EmailInput'
 import PasswordInputGroup from './components/PasswordInputGroup'
 import Submit from './components/SubmitButton'
-import { AuthContext } from '@/context/AuthContext'
+import { useAccountForm } from '@/context/FormContext'
+import { useAuth } from '@/context/AuthContext'
+
 function LogInForm () {
   const router = useRouter()
-  const { logIn } = useContext(AuthContext)
+  const { email, password, setError } = useAccountForm()
+  const { logIn } = useAuth()
+
   const handleLogIn = async (e) => {
     e.preventDefault()
 
     const { error } = await logIn(email, password)
 
     if (error) {
-      console.log(error.code)
       return setError(error)
     }
 

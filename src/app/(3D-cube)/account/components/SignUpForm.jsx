@@ -1,23 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation'
-
 import EmailInput from './components/EmailInput'
 import PasswordInputGroup from './components/PasswordInputGroup'
 import Submit from './components/SubmitButton'
-import { AuthContext } from '@/context/AuthContext'
+import { useAuth } from '@/context/AuthContext'
+import { useAccountForm } from '@/context/FormContext'
 
 function SignUpForm () {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const errorState = useState('')
-  const { signUpWithEmail } = useContext(AuthContext)
-
+  const { signUpWithEmail } = useAuth()
+  const { clearForm, email, password, setError } = useAccountForm()
   const router = useRouter()
-
-  const clearForm = () => {
-    setEmail('')
-    setPassword('')
-  }
 
   const handleSignUp = async (e) => {
     e.preventDefault()
@@ -25,7 +17,7 @@ function SignUpForm () {
     clearForm()
 
     if (error) {
-      return errorState[1](error)
+      return setError(error)
     }
 
     return router.push('/profile/complete')

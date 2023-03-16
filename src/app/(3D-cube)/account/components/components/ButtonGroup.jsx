@@ -1,16 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { FaGoogle } from 'react-icons/fa'
 import styles from './formcomponents.module.css'
-import { FormContext } from '@/context/FormContext'
 import { Button } from '@mantine/core'
 import { useRouter } from 'next/navigation'
-import { AuthContext } from '@/context/AuthContext'
+import { useAuth } from '@/context/AuthContext'
+import { useAccountForm } from '@/context/FormContext'
 
 function ButtonGroup () {
-  const { isLogin, setIsLogin, setError } = useContext(FormContext)
+  const { isLogin, setIsLogin, setError } = useAccountForm()
   const router = useRouter()
-  const { signUpwithGoogle } = useContext(AuthContext)
-
+  const { signUpwithGoogle } = useAuth()
   const handleGoogleSignUp = async (e) => {
     e.preventDefault()
 
@@ -43,7 +42,7 @@ function ButtonGroup () {
         <Button
           variant='light' radius='xl'
           style={{ alignSelf: 'flex-start' }}
-          onClick={() => { setIsLogin(prev => !prev) }}
+          onClick={() => setIsLogin(prev => !prev)}
         >
           {isLogin ? 'Create account' : 'Log In Instead'}
         </Button>

@@ -14,7 +14,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 
 export const AuthContext = createContext()
 
-export const useUser = () => useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext)
 
 export const AuthProvider = ({ children }) => {
   const auth = getAuth(firebaseApp)
@@ -81,7 +81,6 @@ export const AuthProvider = ({ children }) => {
   }
   function changeProfilePicture (newPictureUrl) {
     let error = null
-
     try {
       updateProfile(auth.currentUser, {
         photoURL: newPictureUrl

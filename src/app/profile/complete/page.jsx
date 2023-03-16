@@ -5,7 +5,7 @@ import { QuicksandFont } from '../../(3D-cube)/account/page'
 import ProfileStepper from './ProfileStepper/ProfileStepper'
 
 function CompleteProfile () {
-  // const user = useUser()
+  // const user = useAuth()
   // const router = useRouter()
 
   return (

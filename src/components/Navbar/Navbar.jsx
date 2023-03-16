@@ -5,7 +5,7 @@ import Logo from './components/Logo/Logo'
 import NavItem from './components/NavItem/NavItem'
 import LogInButton from './components/LogIn/LogInButton/LogInButton'
 import UserIcon from './components/LogIn/UserIcon/UserIcon'
-import { useUser } from '@/context/AuthContext'
+import { useAuth } from '@/context/AuthContext'
 
 const links = [
 
@@ -28,7 +28,7 @@ const links = [
 ]
 
 function Navbar () {
-  const { currentUser } = useUser()
+  const { currentUser } = useAuth()
 
   return (
     <header>

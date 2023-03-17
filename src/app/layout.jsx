@@ -6,6 +6,7 @@ import { MantineProvider } from '@mantine/core'
 import { AuthProvider } from '@/context/AuthContext'
 import { Suspense } from 'react'
 import LoadingScreen from '@/components/LoadingScreen/LoadingScreen'
+import Background from '@/components/Background/Background'
 
 export const metadata = {
   title: 'SPEEDCUBING TOOLKIT',
@@ -16,7 +17,16 @@ const font = Staatliches({ subsets: ['latin'], weight: '400' })
 const appTheme = {
   colorScheme: 'dark',
   colors: {
-    brand: ['#F0BBDD', '#ED9BCF', '#EC7CC3', '#ED5DB8', '#F13EAF', '#F71FA7', '#FF00A1', '#E00890', '#C50E82', '#AD1374']
+    brand: ['#F0BBDD',
+      '#ED9BCF',
+      '#EC7CC3',
+      '#ED5DB8',
+      '#F13EAF',
+      '#F71FA7',
+      '#FF00A1',
+      '#E00890',
+      '#C50E82',
+      '#AD1374']
   },
   primaryColor: 'brand'
 // },
@@ -56,10 +66,16 @@ export default function RootLayout ({ children }) {
         <Suspense fallback={<LoadingScreen />}>
           <AuthProvider>
             <MantineProvider theme={appTheme}>
+              <Background />
 
               <Navbar />
 
-              <main style={{ display: 'flex', width: '100%', height: '100%' }}>
+              <main style={{
+                display: 'flex',
+                width: '100%',
+                height: '100%'
+              }}
+              >
 
                 {children}
 

@@ -31,7 +31,7 @@ function Navbar () {
   const { currentUser } = useAuth()
 
   return (
-    <header>
+    <header className={styles.container}>
       <nav className={styles.navbar}>
         <Logo />
 
@@ -43,7 +43,9 @@ function Navbar () {
               </NavItem>
             )
           })}
-          {currentUser ? <UserIcon imageURL={currentUser.photoURL} /> : <LogInButton />}
+          {currentUser
+            ? <UserIcon imageURL={currentUser.photoURL} />
+            : <LogInButton />}
         </ul>
       </nav>
     </header>

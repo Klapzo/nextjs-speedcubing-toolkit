@@ -11,10 +11,16 @@ import ErrorMessage from './components/ErrorMessage'
 function Form () {
   const { isLogin, error } = useAccountForm()
 
-  const formattedError = (error) => error.code.split('/')[1].split('-').join(' ').toUpperCase()
+  const formattedError = (error) =>
+    error.code.split('/')[1].split('-').join(' ').toUpperCase()
+
   return (
     <form className={styles.form}>
-      <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className={styles.wrapper}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={styles.wrapper}
+      >
 
         {isLogin
           ? <LogInForm />

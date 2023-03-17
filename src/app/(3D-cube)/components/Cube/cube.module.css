@@ -19,7 +19,7 @@
 	z-index: 0;
 	width: 400px;
 	height: 400px;
-	scale: 1.1;
+	scale: .5;
 
 	filter: blur(30px);
 	border-radius: 1000vh;

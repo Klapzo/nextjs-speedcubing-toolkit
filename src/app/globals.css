@@ -11,3 +11,10 @@ html,body, #root {
 	letter-spacing: 0.25em;
 
 }
+
+
+body {
+	width: auto;
+	padding-inline: 2%;
+
+}

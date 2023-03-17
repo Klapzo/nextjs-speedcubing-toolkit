@@ -6,7 +6,7 @@ export const cardsInfo = [
     methods: 'ORTEGA GUIMOND CLL SOAP SS OFOTA EG'
   },
 
-  { title: '3 x 3', disabled: false, path: '3x3', methods: 'BEGINNER CFOP ROUX ZZ' },
+  { title: '3 x 3', disabled: false, path: '3x3', methods: 'CFOP ROUX ZZ' },
 
   {
     title: '4 x 4',
@@ -14,6 +14,7 @@ export const cardsInfo = [
     path: '4x4',
     methods: 'REDUCTION K4 YAU4'
   },
+
   { title: '5 x 5', disabled: true, path: '5x5', methods: 'REDUCTION YAU5' },
   { title: '6 x 6', disabled: true, path: '6x6', methods: 'REDUCTION YAU6' },
   { title: '7 x 7', disabled: true, path: '7x7', methods: 'REDUCTION YAU7' }

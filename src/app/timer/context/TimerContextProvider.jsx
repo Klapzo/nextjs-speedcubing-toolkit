@@ -8,7 +8,12 @@ export const TimerContext = createContext()
 
 export function TimerProvider ({ children }) {
   const { startTimer, stopTimer, active, currentTime } = useTimer()
-  const { getNextScramble, getPrevScramble, index, scrambleList } = useScrambles()
+  const {
+    getNextScramble,
+    getPrevScramble,
+    index,
+    scrambleList
+  } = useScrambles()
 
   const [focusmode, setFocusMode] = useState(false)
   const [ready, setReady] = useState(false)

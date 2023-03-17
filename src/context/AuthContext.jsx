@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   updateProfile,
   signOut
+
 } from 'firebase/auth'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
@@ -67,12 +68,12 @@ export const AuthProvider = ({ children }) => {
     return { UserCredential, error }
   }
 
-  function changeUsername (newUser) {
+  function changeUsername (newUsername) {
     let error = null
 
     try {
       updateProfile(auth.currentUser, {
-        displayName: newUser
+        displayName: newUsername
       })
     } catch (e) {
       error = e
@@ -84,6 +85,18 @@ export const AuthProvider = ({ children }) => {
     try {
       updateProfile(auth.currentUser, {
         photoURL: newPictureUrl
+      })
+    } catch (e) {
+      error = e
+    }
+    return error
+  }
+  function addField (field) {
+    let error = null
+
+    try {
+      updateProfile(auth.currentUser, {
+        mainEvents: [field]
       })
     } catch (e) {
       error = e
@@ -106,8 +119,17 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, logIn, signUpWithEmail, signUpwithGoogle, changeProfilePicture, changeUsername, logOut }}>
+    <AuthContext.Provider value={{ currentUser, logIn, signUpWithEmail, signUpwithGoogle, changeProfilePicture, changeUsername, logOut, addField }}>
       {children}
     </AuthContext.Provider>
   )
 }
+
+// USER SCHEMA
+// addUser({
+//   userId: currentUser.uid,
+//   userName: currentUser.displayName,
+//   avatar: currentUser.photoURL,
+//   mainEvents: [''],
+//   createdAt: currentUser.metadata.creationTime
+// })

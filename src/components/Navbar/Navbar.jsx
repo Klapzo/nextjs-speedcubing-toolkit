@@ -10,20 +10,13 @@ import { useAuth } from '@/context/AuthContext'
 const links = [
 
   {
-    label: 'algs',
+    label: 'algorithms',
     route: '/algs'
   },
-  {
-    label: 'practice',
-    route: '/practice'
-  },
+
   {
     label: 'timer',
     route: '/timer'
-  },
-  {
-    label: 'wiki',
-    route: '/wiki'
   }
 ]
 

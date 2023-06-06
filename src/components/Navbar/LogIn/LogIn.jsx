@@ -1,7 +1,7 @@
 import { AuthContext } from '@/context/AuthContext'
 import React, { useContext } from 'react'
 import LogInButton from './LogInButton'
-import UserIcon from './userIcon'
+import UserIcon from './UserIcon'
 
 function LogIn () {
   const { currentUser } = useContext(AuthContext)

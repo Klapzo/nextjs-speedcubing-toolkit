@@ -47,7 +47,8 @@ export const AuthProvider = ({ children }) => {
     let UserCredential = null
     let error = null
     try {
-      UserCredential = await createUserWithEmailAndPassword(auth, email, password)
+      UserCredential = await
+      createUserWithEmailAndPassword(auth, email, password)
     } catch (e) {
       error = e
     }
@@ -119,7 +120,17 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, logIn, signUpWithEmail, signUpwithGoogle, changeProfilePicture, changeUsername, logOut, addField }}>
+    <AuthContext.Provider value={{
+      currentUser,
+      logIn,
+      signUpWithEmail,
+      signUpwithGoogle,
+      changeProfilePicture,
+      changeUsername,
+      logOut,
+      addField
+    }}
+    >
       {children}
     </AuthContext.Provider>
   )

@@ -1,5 +1,13 @@
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  Timestamp,
+  getDoc,
+  doc
+} from 'firebase/firestore'
+
 import firebaseApp from '../config'
-import { getFirestore, addDoc, collection, Timestamp } from 'firebase/firestore'
 
 const db = getFirestore(firebaseApp)
 
@@ -14,7 +22,13 @@ async function addData (colllection, data) {
   }
 }
 
-export async function addUser ({ userId, userName, avatar, mainEvents, createdAt }) {
+export async function addUser ({
+  userId,
+  userName,
+  avatar,
+  mainEvents,
+  createdAt
+}) {
   const response = await addData('users',
     {
       userId,

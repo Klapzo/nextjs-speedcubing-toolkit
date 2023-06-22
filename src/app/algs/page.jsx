@@ -7,12 +7,16 @@ import CardMethods from './components/CubeCard/CardMethods'
 
 import { cardsInfo } from '../../utils/cardsInfo'
 
-function algorithms (props) {
+function algorithms () {
   return (
     <>
       <div className={styles.algorithms}>
         {cardsInfo.map((card, index) => (
-          <FrostedContainer disabled={card.disabled} key={index}>
+          <FrostedContainer
+            path={card.title}
+            disabled={card.disabled}
+            key={index}
+          >
 
             <CardTitle title={card.title} />
             <CardImage img={`/images/cubes/${card.path}.png`} />

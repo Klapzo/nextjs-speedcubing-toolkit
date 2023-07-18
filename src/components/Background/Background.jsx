@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './backround.module.css'
+import styles from './background.module.css'
 
 function Background ({ children }) {
   return (
@@ -15,3 +15,4 @@ function Background ({ children }) {
 }
 
 export default Background
+

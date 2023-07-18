@@ -10,12 +10,15 @@
 
 }
 
+.cubecontainer {
+
+}
 
 .cubeBackground  {
 	opacity: 1;
-    position: absolute;
-    left: 10%;
-    top: 23%;
+	position: absolute;
+	top: 23%;
+	left: 10%;
 	z-index: 0;
 	width: 400px;
 	height: 400px;

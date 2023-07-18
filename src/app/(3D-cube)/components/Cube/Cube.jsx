@@ -7,6 +7,7 @@ export default function Cube () {
   const [loaded, setLoaded] = useState(false)
   return (
     <>
+      {/* <div className={styles.cubecontainer}> */}
 
       <Spline
         onLoad={() => setLoaded(true)}
@@ -14,6 +15,7 @@ export default function Cube () {
         scene='https://draft.spline.design/CjgjrJRL0f-tbUcs/scene.splinecode'
       />
       <canvas className={styles.cubeBackground} />
+      {/* </div> */}
     </>
   )
 }
